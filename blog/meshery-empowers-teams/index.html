@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Meshery empowered my teams | Michael Vance</title>
+  <meta name="description" content="Why Meshery became core to the platform I engineer, and what changed for the developers who use it.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Meshery empowered my teams">
+  <meta property="og:image" content="https://michaelvance092.github.io/michaelvance0092.github.io/assets/img/cover-meshery-teams.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../"><span class="brand-mark" aria-hidden="true">MV</span>Michael Vance</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../../#about">About</a>
+        <a href="../../#work">Work</a>
+        <a href="../../#workbenches">Two workbenches</a>
+        <a href="../" aria-current="page">Blog</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="ruler" aria-hidden="true"></div>
+
+  <main id="main" class="wrap">
+    <div class="article-head">
+      <p class="eyebrow">Engineering / Meshery</p>
+      <h1>How Meshery empowered my teams</h1>
+      <p class="dek">Why Meshery became core to the platform I engineer, and what changed for the developers who use it.</p>
+      <div class="byline"><span>Michael Vance</span><span>/</span><time datetime="2026-09-02">Sep 2, 2026</time><span>/</span><span>5 min read</span></div>
+    </div>
+    <div class="article-cover"><img src="../../assets/img/cover-meshery-teams.svg" width="1200" height="630" alt="Four team boxes connected by dashed lines to a central platform block."></div>
+
+    <article class="article">
+      <p>I used to run a platform team that behaved like a help desk. Developers filed a ticket, we wrote or edited a Terraform module, and a few days later their environment appeared. It worked, in the sense that everything eventually got built. It also made my team the slowest part of every project.</p>
+
+      <h2>The problem was not the code</h2>
+      <p>The infrastructure code was fine. The problem was that only a few people could read it, and none of the developers could see the whole system. A misplaced bracket in a large module once caused an outage, and the post-mortem made the real issue obvious: we had optimized for execution and ignored understanding.</p>
+
+      <h2>What Meshery changed</h2>
+      <p>Meshery is now core to the platform I engineer at work. It gave us three things we did not have before.</p>
+      <ol>
+        <li><strong>A shared model.</strong> Components, relationships, and designs give everyone, from a new hire to a staff engineer, the same picture of how services connect.</li>
+        <li><strong>Guardrails that are enforced, not documented.</strong> Instead of a wiki page of rules, the platform checks designs against organizational policy as they are composed.</li>
+        <li><strong>Self-service with feedback.</strong> A developer composes an environment visually and sees immediately whether it fits the rules, without waiting for review.</li>
+      </ol>
+
+      <h2>What it did for the teams</h2>
+      <p>The effect on my own team was as important as the effect on developers. We stopped being the gatekeepers and became the people who design the road.</p>
+      <ul>
+        <li>Provisioning time dropped from about four days to about fifteen minutes.</li>
+        <li>More than 200 developers can now compose and provision their own environments.</li>
+        <li>My team of eight spends its time improving the platform instead of answering the same tickets.</li>
+        <li>Onboarding is faster, because a picture of the system is easier to learn than a repository of modules.</li>
+      </ul>
+      <blockquote>When the platform is a product, the best sign of success is the ticket nobody had to file.</blockquote>
+
+      <h2>Pairing it with agents</h2>
+      <p>The same model that helps new engineers also helps AI agents. With <a href="../mesheryctl-axi/">mesheryctl-axi</a>, my team and I can ask an agent to inspect connections, read designs, and explain how a system fits together, then decide what to do. It speeds up the work without taking judgment out of it.</p>
+
+      <h2>What I would tell another platform lead</h2>
+      <ul>
+        <li>Start by making the system visible. People can only own what they can see.</li>
+        <li>Move rules from documents into the platform, so they are checked automatically.</li>
+        <li>Measure the tickets you stop receiving, not just the features you ship.</li>
+      </ul>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a href="../mesheryctl-axi/">Previous: Meshery is AI-centric</a>
+        <a href="../kubectl-to-kanvas-snapshots/">Next: From kubectl to a picture of my cluster</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Michael Vance / Indianapolis, IN</span>
+      <a href="../../">Back to home</a>
+    </div>
+  </footer>
+</body>
+</html>

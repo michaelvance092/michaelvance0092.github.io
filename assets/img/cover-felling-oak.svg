@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Blueprint drawing of a tree being felled beside a house with a hinge cut and fall line"><rect width="1200" height="630" fill="#1d3b63"/><g stroke="#8fb6ee" stroke-opacity=".18" stroke-width="1"><path d="M0 0V630"/><path d="M40 0V630"/><path d="M80 0V630"/><path d="M120 0V630"/><path d="M160 0V630"/><path d="M200 0V630"/><path d="M240 0V630"/><path d="M280 0V630"/><path d="M320 0V630"/><path d="M360 0V630"/><path d="M400 0V630"/><path d="M440 0V630"/><path d="M480 0V630"/><path d="M520 0V630"/><path d="M560 0V630"/><path d="M600 0V630"/><path d="M640 0V630"/><path d="M680 0V630"/><path d="M720 0V630"/><path d="M760 0V630"/><path d="M800 0V630"/><path d="M840 0V630"/><path d="M880 0V630"/><path d="M920 0V630"/><path d="M960 0V630"/><path d="M1000 0V630"/><path d="M1040 0V630"/><path d="M1080 0V630"/><path d="M1120 0V630"/><path d="M1160 0V630"/><path d="M1200 0V630"/><path d="M0 0H1200"/><path d="M0 40H1200"/><path d="M0 80H1200"/><path d="M0 120H1200"/><path d="M0 160H1200"/><path d="M0 200H1200"/><path d="M0 240H1200"/><path d="M0 280H1200"/><path d="M0 320H1200"/><path d="M0 360H1200"/><path d="M0 400H1200"/><path d="M0 440H1200"/><path d="M0 480H1200"/><path d="M0 520H1200"/><path d="M0 560H1200"/><path d="M0 600H1200"/></g>
+<g fill="none" stroke="#f3ebdb" stroke-width="4" stroke-linejoin="round">
+<path d="M80 520H1120"/>
+<path d="M880 520V330L960 250L1040 330V520Z"/><path d="M860 340L960 240L1060 340" /><rect x="930" y="420" width="60" height="100"/>
+<path d="M330 520C335 440 320 400 318 350M390 520C385 440 398 400 400 350"/>
+<circle cx="360" cy="230" r="130"/><circle cx="290" cy="270" r="80"/><circle cx="440" cy="280" r="85"/>
+</g>
+<path d="M318 470L360 490L318 500Z" fill="#f0b81f" stroke="#f0b81f"/>
+<g stroke="#f0b81f" stroke-width="4" fill="none" stroke-dasharray="14 10"><path d="M360 230C220 150 150 330 140 520"/></g>
+<g fill="#f0b81f"><path d="M150 480l-14 -28l28 0z"/></g>
+<g stroke="#f0b81f" stroke-width="3" fill="none"><path d="M400 540H880M400 530V550M880 530V550"/></g>
+<text x="520" y="530" fill="#f0b81f" font-family="monospace" font-size="20">SAFE DISTANCE</text>
+<rect x="24" y="24" width="1152" height="582" fill="none" stroke="#f3ebdb" stroke-width="3"/><text x="48" y="580" fill="#f0b81f" font-family="monospace" font-size="22" letter-spacing="3">FELLING PLAN / FALL LINE AWAY FROM HOUSE</text></svg>
