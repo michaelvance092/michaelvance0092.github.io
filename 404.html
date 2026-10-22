@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Michael Vance</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3ebdb;color:#2b2118;font-family:Georgia,serif;text-align:center;padding:1rem}
+    h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:.2rem 0}
+    code{font-family:ui-monospace,Menlo,monospace;background:#f0b81f;padding:.1em .4em;border:2px solid #2b2118;border-radius:4px}
+    a{color:#1d3b63;font-weight:700}
+    @media (prefers-color-scheme:dark){body{background:#101c2e;color:#efe6d3}a{color:#8fb6ee}}
+  </style>
+</head>
+<body>
+  <main>
+    <p><code>ERR 404</code></p>
+    <h1>Measured twice, cut once. This page isn't here.</h1>
+    <p>The board you were looking for was never milled.</p>
+    <p><a id="home" href="/">Back to the workbench</a></p>
+    <script>
+      // This is a project site served from /michaelvance0092.github.io/, so root-relative links need that prefix.
+      (function () {
+        var base = location.pathname.indexOf('/michaelvance0092.github.io/') === 0 ? '/michaelvance0092.github.io/' : '/';
+        document.getElementById('home').href = base;
+        document.querySelector('link[rel=icon]').href = base + 'assets/favicon.svg';
+      })();
+    </script>
+  </main>
+</body>
+</html>

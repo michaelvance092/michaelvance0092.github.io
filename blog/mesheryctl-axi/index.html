@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meshery is AI-centric, and mesheryctl-axi shows it | Michael Vance</title>
+  <meta name="description" content="A token-efficient, agent-friendly wrapper that makes mesheryctl easy for people and agents to drive.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Meshery is AI-centric, and mesheryctl-axi shows it">
+  <meta property="og:image" content="https://michaelvance092.github.io/michaelvance0092.github.io/assets/img/cover-mesheryctl-axi.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../"><span class="brand-mark" aria-hidden="true">MV</span>Michael Vance</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../../#about">About</a>
+        <a href="../../#work">Work</a>
+        <a href="../../#workbenches">Two workbenches</a>
+        <a href="../" aria-current="page">Blog</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="ruler" aria-hidden="true"></div>
+
+  <main id="main" class="wrap">
+    <div class="article-head">
+      <p class="eyebrow">Engineering / Meshery</p>
+      <h1>Meshery is AI-centric, and mesheryctl-axi shows it</h1>
+      <p class="dek">A token-efficient, agent-friendly wrapper that makes mesheryctl easy for people and agents to drive.</p>
+      <div class="byline"><span>Michael Vance</span><span>/</span><time datetime="2026-08-30">Aug 30, 2026</time><span>/</span><span>6 min read</span></div>
+    </div>
+    <div class="article-cover"><img src="../../assets/img/cover-mesheryctl-axi.svg" width="1200" height="630" alt="A terminal running mesheryctl-axi system status next to a small node graph."></div>
+
+    <article class="article">
+      <p>Meshery is core to the platform I engineer at work, and I have been enjoying it more with every month that AI agents become a normal part of how my team operates. The reason is simple: Meshery was built around a model of infrastructure (components, relationships, designs, connections) that an agent can reason about just as well as a person can. The tool that makes that obvious in daily use is <code>mesheryctl-axi</code>.</p>
+
+      <h2>What "AXI" means here</h2>
+      <p>AXI stands for agent experience interface. It is a thin wrapper around an existing CLI that reshapes the output so it is cheap and unambiguous for an AI agent to read, and still pleasant for a human. <code>mesheryctl-axi</code> wraps <code>mesheryctl</code> and gives it a small, discoverable surface.</p>
+
+<pre><code>$ mesheryctl-axi --help
+usage: mesheryctl-axi [command] [args] [flags]
+commands[5]:
+  (none)=home, connection, system, design, model, component
+flags[2]:
+  --help, -v/-V/--version
+requires:
+  mesheryctl installed and authenticated</code></pre>
+
+      <p>Five command groups, and a home view when you give it nothing. That is the entire mental model, and it fits in the first screen of output.</p>
+
+      <h2>Why this works so well for agents</h2>
+      <ul>
+        <li><strong>Compact output.</strong> Results are structured and terse, so an agent spends its context window on the task, not on parsing banners and tables.</li>
+        <li><strong>Self-describing.</strong> The home view and the examples in <code>--help</code> tell an agent what to run next. There is no guessing at flags.</li>
+        <li><strong>Predictable formats.</strong> When you need full content, you ask for it explicitly with <code>--format yaml</code> or <code>--format json</code>.</li>
+        <li><strong>Reads first.</strong> The commands I reach for most are read operations that are safe to let an agent run freely.</li>
+      </ul>
+
+<pre><code><span class="c"># What is the state of my Meshery server?</span>
+mesheryctl-axi system status
+
+<span class="c"># What clusters and cloud accounts does Meshery know about?</span>
+mesheryctl-axi connection list
+
+<span class="c"># What designs exist, and what is inside one?</span>
+mesheryctl-axi design list
+mesheryctl-axi design content my-design --format yaml
+
+<span class="c"># What can Meshery model, and what are the components?</span>
+mesheryctl-axi model content kubernetes --format json
+mesheryctl-axi component list</code></pre>
+
+      <h2>A workflow I actually use</h2>
+      <p>When something looks off in a cluster, I now start by asking an agent a plain-language question and letting it drive <code>mesheryctl-axi</code>. It checks <code>system status</code>, lists the <code>connection</code> entries to find the right cluster, pulls the relevant <code>design</code> in YAML, and tells me where the running state and the intended design diverge.</p>
+      <p>That is not a demo. It is a few seconds of reading that used to take me a handful of terminal tabs and a lot of scrolling.</p>
+
+      <div class="callout">
+        <strong>Keeping it current</strong>
+        <code>mesheryctl-axi update --check</code> reports your version against the latest published one, and <code>mesheryctl-axi update</code> upgrades it. Set <code>MESHERYCTL_BIN</code> if your <code>mesheryctl</code> binary is not on your <code>PATH</code>.
+      </div>
+
+      <h2>Why I call Meshery AI-centric</h2>
+      <p>Plenty of tools bolt a chat box onto an old interface. Meshery's strength is underneath. Everything is a typed, relationship-aware model: a component knows what it can connect to, a design is a document that describes a whole system, and a connection is a first-class thing. Those are exactly the shapes that agents are good at working with. A wrapper like <code>mesheryctl-axi</code> only has to get out of the way.</p>
+      <p>In the next post I will cover what that has meant for the teams who build on the platform.</p>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a href="../">All posts</a>
+        <a href="../meshery-empowers-teams/">Next: How Meshery empowered my teams</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Michael Vance / Indianapolis, IN</span>
+      <a href="../../">Back to home</a>
+    </div>
+  </footer>
+</body>
+</html>
