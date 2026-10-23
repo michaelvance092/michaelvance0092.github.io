@@ -1,12 +1,12 @@
 name: Publish site
 
 # Builds the static site and publishes it to GitHub Pages.
-# Pull requests run the checks only; pushes to main also deploy.
+# Pull requests run the checks only; pushes to master also deploy.
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
